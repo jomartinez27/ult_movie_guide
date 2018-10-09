@@ -1,6 +1,15 @@
 .navbar-container {
     display: flex;
+    justify-content: space-between;
     background-color: black;
     border: 1px solid black;
     color: aliceblue;
+}
+
+.links-container {
+    display: block;
+}
+
+.links {
+    display: flex;
 }
