@@ -1,5 +1,6 @@
 .navbar-container {
     display: flex;
-    justify-content: flex-start;
     background-color: black;
+    border: 1px solid black;
+    color: aliceblue;
 }
