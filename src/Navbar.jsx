@@ -3,6 +3,7 @@ import "./CSS/Navbar.css"
 import powerBy from './images/power-by-movie.png';
 
 export default class Navbar extends Component {
+    
   render() {
     return (
       <div className="navbar-container">
