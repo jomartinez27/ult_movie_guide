@@ -7,9 +7,21 @@
 }
 
 .links-container {
-    display: block;
+    display: flex;
+    align-items: center;
 }
 
-.links {
-    display: flex;
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+}
+
+li a:hover {
+    color: #01d277;
 }
