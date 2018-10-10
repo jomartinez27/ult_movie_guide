@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import "./CSS/Navbar.css"
 import powerBy from './images/power-by-movie.png';
 
@@ -13,9 +14,9 @@ export default class Navbar extends Component {
             <div className="links-container">
                 <div className="links">
                     <ul>
-                        <li><a href="#">Popular</a></li>
-                        <li><a href="#">Top Rated</a></li>
-                        <li><a href="#">Now Playing</a></li>
+                        <li><Link to="/popular">Popular</Link></li>
+                        <li><Link to="/rated">Top Rated</Link></li>
+                        <li><Link to="/playing">Now Playing</Link></li>
                     </ul>
                 </div>
             </div>
