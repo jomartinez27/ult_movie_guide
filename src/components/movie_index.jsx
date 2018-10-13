@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
+import { withRouter } from 'react-router-dom'
 import "../CSS/Movie.css"
 import $ from 'jquery'
 
-export default class MovieIndex extends Component {
+class MovieIndex extends Component {
     constructor(props) {
         super(props)
 
@@ -34,11 +35,16 @@ export default class MovieIndex extends Component {
         {this.popularMovies()}
             {this.state.movieRows.map(movie => <li key={movie.id} className="movie">
                 <img src={movie.img} alt="Movie poster"/>
-                <h4>{movie.title}</h4>
-                <p>{movie.overview}</p>
+                <div className="movie-info">
+                    <div className="movie-title">{movie.title}</div>
+                    <div className="movie-date">Release Date: {movie.release_date}</div>
+                    <p className="movie-overview">{movie.overview}</p>
+                </div>
             </li>)}
         </div>
       </div>
     )
   }
 }
+
+export default withRouter(MovieIndex)

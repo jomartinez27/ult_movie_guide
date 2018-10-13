@@ -7,8 +7,29 @@
 }
 
 .movie {
+    display: flex;
     border: 1px solid #000;
     box-shadow: 10px 5px 15px gray;
     margin: 20px;
     padding: 10px;
+    border-radius: 14px;
+}
+
+.movie-index {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.movie-title {
+    font-family: 'PT Sans Caption', sans-serif;
+    font-size: 36px;
+}
+
+.movie-overview {
+    font-family: 'Alegreya Sans', sans-serif;
+    border: 1px solid;
+    padding: 16px;
+    margin: 12px; 
+    border-radius: 12px;
 }
