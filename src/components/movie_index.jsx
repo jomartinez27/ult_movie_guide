@@ -32,8 +32,8 @@ export default class MovieIndex extends Component {
       <div className="movie-index-container">
         <div className="grid-container">
         {this.popularMovies()}
-            {this.state.movieRows.map(movie => <li key={movie.id}>
-                <img src={movie.img}/>
+            {this.state.movieRows.map(movie => <li key={movie.id} className="movie">
+                <img src={movie.img} alt="Movie poster"/>
                 <h4>{movie.title}</h4>
                 <p>{movie.overview}</p>
             </li>)}

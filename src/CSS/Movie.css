@@ -1,5 +1,14 @@
 .grid-container {
+    margin: 30px;
+    text-align: center;
     display: grid;
-    grid-template-columns: auto 1fr;
+    grid-template-columns: 1fr 1fr;
     grid-column-gap: 40px;
+}
+
+.movie {
+    border: 1px solid #000;
+    box-shadow: 10px 5px 15px gray;
+    margin: 20px;
+    padding: 10px;
 }
