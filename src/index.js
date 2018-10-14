@@ -2,8 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import Root from './Root';
+import configureStore from './store/store'
+
 
 document.addEventListener("DOMContentLoaded", () => {
     const root = document.getElementById("root");
-    ReactDOM.render(<Root />, root) 
+    let store = configureStore();
+    ReactDOM.render(<Root store={store}/>, root) 
 })

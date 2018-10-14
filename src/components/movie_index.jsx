@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { withRouter } from 'react-router-dom'
+import { withRouter, Link } from 'react-router-dom'
 import "../CSS/Movie.css"
 import $ from 'jquery'
 
@@ -11,8 +11,12 @@ class MovieIndex extends Component {
         this.state = {movieRows: []}
     }
 
+    componentDidMount() {
+        console.log(this.props.fetchPopular())
+    }
+
     popularMovies() {
-        const popularString = `https://api.themoviedb.org/3/movie/now_playing?api_key=${'13974aec8a507bc409f142057852e657'}&language=en-US&page=1`
+        const popularString = `https://api.themoviedb.org/3/movie/popular?api_key=13974aec8a507bc409f142057852e657&language=en-US&page=1`
         const playingString = `https://api.themoviedb.org/3/movie/now_playing?api_key=${'13974aec8a507bc409f142057852e657'}&language=en-US&page=1`
         const topRated = `https://api.themoviedb.org/3/movie/top_rated?api_key=${'13974aec8a507bc409f142057852e657'}&language=en-US&page=1`
 
@@ -21,7 +25,7 @@ class MovieIndex extends Component {
             urlString = topRated;
         } else if (this.props.location.pathname === "/playing") {
             urlString = playingString;
-        } else {
+        } else  {
             urlString = popularString;
         }
 
@@ -76,7 +80,7 @@ class MovieIndex extends Component {
             {this.state.movieRows.map(movie => <li key={movie.id} className="movie">
                 <img src={movie.img} alt="Movie poster"/>
                 <div className="movie-info">
-                    <div className="movie-title">{movie.title}</div>
+                    <Link className="movie-link" to={`/movies/${movie.id}`}><div className="movie-title">{movie.title}</div></Link>
                     <div className="movie-date">Release Date: {movie.get_date}</div>
                     <p className="movie-overview">{movie.overview}</p>
                 </div>
