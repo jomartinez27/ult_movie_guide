@@ -3,6 +3,7 @@ import * as MovieUtil from '../api/movie_util'
 export const POPULAR_MOVIES = 'POPULAR_MOVIES'
 export const NOW_PLAYING = 'NOW_PLAYING'
 export const TOP_RATED = 'TOP_RATED'
+export const RECEIVE_MOVIE = 'RECEIVE_MOVIE'
 
 export const fetchPopular = () => dispatch => (
     MovieUtil.fetchPopular()
@@ -34,4 +35,14 @@ export const fetchRated = () => dispatch => (
 export const receiveRated = topRated => ({
     type: TOP_RATED,
     topRated
+})
+
+export const fetchMovie = id => dispatch => (
+    MovieUtil.fetchMovie(id)
+    .then(movie => dispatch(receiveMovie(movie)))
+)
+
+export const receiveMovie = movie => ({
+    type: RECEIVE_MOVIE,
+    movie  
 })

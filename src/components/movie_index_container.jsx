@@ -3,9 +3,8 @@ import MovieIndex from './movie_index';
 import { fetchPopular, fetchPlaying, fetchRated } from '../actions/movie_actions'
 
 const mapStateToProps = (state, ownProps) => {
-    console.log(state)
     return {
-        movies: state.entities.movies.results
+        movies: state.entities.movies.results,
     }
 }
 

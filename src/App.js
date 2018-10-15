@@ -1,22 +1,67 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom'
 import './CSS/App.css';
-import Navbar from './Navbar';
-import MovieIndex from './components/movie_index_container'
-import { Switch, Route } from 'react-router'
-import MovieItem from './components/movie_item' 
+import MovieRow from './components/movie_index'
+import NavBar from './Navbar'
+import $ from 'jquery'
 
 class App extends Component {
+
+  constructor(props) {
+    super(props)
+    this.state = {}
+  }
+
+  displayMovies() {
+    const topRated = `https://api.themoviedb.org/3/movie/top_rated?api_key=${'13974aec8a507bc409f142057852e657'}&language=en-US&page=1`
+    const nowPlaying = `https://api.themoviedb.org/3/movie/now_playing?api_key=${'13974aec8a507bc409f142057852e657'}&language=en-US&page=1`
+    const popular = `https://api.themoviedb.org/3/movie/popular?api_key=${'13974aec8a507bc409f142057852e657'}&language=en-US&page=1`
+
+    let urlString;
+
+    if (this.props.location.pathname === "/rated") {
+      urlString = topRated
+    } else if (this.props.location.pathname === "/playing") {
+      urlString = nowPlaying
+    } else {
+      urlString = popular
+    }
+
+
+    $.ajax({
+      url: urlString,
+      method: 'GET',
+      success: (searchResults) => {
+        const movies = searchResults.results
+        let movieRows = []
+
+        movies.forEach(movie => {
+          movie.img = "https://image.tmdb.org/t/p/w185" + movie.poster_path
+          const movieRow = <MovieRow key={movie.id} movie={movie}/>
+          movieRows.push(movieRow)
+        })
+
+        this.setState({rows: movieRows})
+      }
+    })
+  }
+
+  searchChangeHandler(event) {
+    console.log(event.target.value)
+    const boundObject = this
+    const searchTerm = event.target.value
+    boundObject.performSearch(searchTerm)
+  }
+
   render() {
     return (
-      <div className="App">
-        <Navbar />
-      <Switch>
-        <Route path="/" component={MovieIndex} />
-        <Route exact path="/movie/:movieId" component={MovieItem}/>
-      </Switch>
+      <div>
+        <NavBar />
+        {this.displayMovies()}
+        {this.state.rows}
       </div>
     );
   }
 }
 
-export default App;
+export default withRouter(App);
