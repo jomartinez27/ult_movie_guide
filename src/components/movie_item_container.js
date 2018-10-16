@@ -2,9 +2,10 @@ import { connect } from 'react-redux'
 import MovieItem from './movie_item'
 import { fetchMovie } from '../actions/movie_actions'
 
-const mapStateToProps = (state, ownProps) => ({
-    movies: state.entities.movies.results
-})
+const mapStateToProps = (state, ownProps) => {
+    console.log(state)
+    // movies: state.entities.movies.results
+}
 
 const mapDispatchToProps = dispatch => ({
     fetchMovie: id => dispatch(fetchMovie(id))
