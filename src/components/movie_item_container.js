@@ -4,7 +4,9 @@ import { fetchMovie } from '../actions/movie_actions'
 
 const mapStateToProps = (state, ownProps) => {
     console.log(state)
-    // movies: state.entities.movies.results
+    return {
+        movies: state.entities.movies
+    }
 }
 
 const mapDispatchToProps = dispatch => ({

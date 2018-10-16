@@ -12,7 +12,6 @@ const moviesReducer = (state = {}, action) => {
         case TOP_RATED:
             return merge({}, state, action.topRated)
         case RECEIVE_MOVIE:
-            console.log(action.movie)
             return merge({}, state, { [action.movie.id]: action.movie})
         default:
         return state;

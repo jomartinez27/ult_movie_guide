@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom'
 import './CSS/App.css';
 import MovieRow from './components/movie_index'
+import MovieItem from './components/movie_item_container'
 import NavBar from './Navbar'
 import $ from 'jquery'
 
@@ -50,8 +51,7 @@ class App extends Component {
     return (
       <div>
         <NavBar />
-        {this.displayMovies()}
-        {this.state.rows}
+        <MovieItem />
       </div>
     );
   }

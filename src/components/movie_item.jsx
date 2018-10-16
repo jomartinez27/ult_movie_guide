@@ -1,11 +1,17 @@
 import React, { Component } from 'react'
+import { withRouter } from 'react-router-dom'
 
-export default class MovieItem extends Component {
+class MovieItem extends Component {
+  componentDidMount() {
+    this.props.fetchMovie(this.props.match.params.id)
+  }
+
   render() {
-    console.log(this.props.fetchMovie(19404))
     return (
       <div>
       </div>
     )
   }
 }
+
+export default withRouter(MovieItem)

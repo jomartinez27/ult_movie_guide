@@ -17,8 +17,6 @@ class MovieRow extends React.Component {
       url: urlString,
       success: movie => {
         const movieItem = <MovieItem key={movie.id} movie={movie}/>
-        this.setState({movie: movieItem})
-        console.log(this.state)
       }
     })
   }
