@@ -24,7 +24,28 @@ class MovieRow extends React.Component {
   }
 
   displayDate() {
-    
+    let months = {
+      "01": "Jan.",
+      "02": "Feb.",
+      "03": "Mar.",
+      "04": "Apr.",
+      "05": "May",
+      "06": "Jun.",
+      "07": "Jul.",
+      "08": "Aug.",
+      "09": "Sept.",
+      "10": "Oct.",
+      "11": "Nov.",
+      "12": "Dec."
+    }
+      let year = "";
+      let month = "";
+      let day = "";
+      let date = this.props.movie.release_date.split('-')
+      year += date[0];
+      month += months[date[1]];
+      day += date[2]
+      this.props.movie.get_date = `${month} ${day}, ${year}`
   }
 
   render() {
@@ -36,6 +57,7 @@ class MovieRow extends React.Component {
             <div className="movie-info">
               <div className="movie-title" onClick={this.displayMovie.bind(this)}>{this.props.movie.title}
               </div>
+              {this.displayDate()}
               <div className="movie-date">Release Date: {this.props.movie.get_date}
               </div>
               <p className="movie-overview">{this.props.movie.overview}</p>
