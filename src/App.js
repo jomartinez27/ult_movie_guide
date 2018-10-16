@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom'
 import './CSS/App.css';
 import MovieRow from './components/movie_index'
-import MovieItem from './components/movie_item_container'
 import NavBar from './Navbar'
 import $ from 'jquery'
 
@@ -38,6 +37,7 @@ class App extends Component {
 
         movies.forEach(movie => {
           movie.img = "https://image.tmdb.org/t/p/w185" + movie.poster_path
+          movie.background = "https://image.tmdb.org/t/p/w185" + movie.backdrop_path
           const movieRow = <MovieRow key={movie.id} movie={movie}/>
           movieRows.push(movieRow)
         })
@@ -51,7 +51,8 @@ class App extends Component {
     return (
       <div>
         <NavBar />
-        <MovieItem />
+        {this.displayMovies()}
+        {this.state.rows}
       </div>
     );
   }

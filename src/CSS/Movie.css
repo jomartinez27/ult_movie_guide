@@ -44,3 +44,7 @@
 .movie-link {
     color: #000;
 }
+
+.more-info {
+    display: none;
+}
