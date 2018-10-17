@@ -36,8 +36,8 @@ class App extends Component {
         let movieRows = []
 
         movies.forEach(movie => {
-          movie.img = "https://image.tmdb.org/t/p/w185" + movie.poster_path
-          movie.background = "https://image.tmdb.org/t/p/w185" + movie.backdrop_path
+          movie.img = "https://image.tmdb.org/t/p/w200" + movie.poster_path
+          movie.background = "https://image.tmdb.org/t/p/w500" + movie.backdrop_path
           const movieRow = <MovieRow key={movie.id} movie={movie}/>
           movieRows.push(movieRow)
         })
