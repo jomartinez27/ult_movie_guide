@@ -1,11 +1,24 @@
 import React from 'react'
 import "../CSS/Movie.css"
+import $ from 'jquery'
 
 class MovieRow extends React.Component {
   constructor(props) {
     super(props)
 
-    this.displayInfo = this.displayInfo.bind(this)
+    this.displayMovie = this.displayMovie.bind(this)
+  }
+
+
+  displayMovie() {
+    let urlString = `https://api.themoviedb.org/3/movie/${this.props.movie.id}?api_key=${'13974aec8a507bc409f142057852e657'}&language=en-US`
+    let mov = $.ajax({
+      url: urlString,
+      success: movie => {
+        console
+      }
+    })
+    console.log(mov)
   }
 
   displayDate() {
@@ -34,40 +47,24 @@ class MovieRow extends React.Component {
   }
 
   displayInfo() {
-    let cards = document.getElementsByClassName("movie")
-    let moreInfo = document.getElementsByClassName("more-info")
-    for (let i = 0; i < cards.length; i++) {
-      let card = cards[i]
-      let cardInfo = moreInfo[i]
-      card.addEventListener("click", () => {
-        if (cardInfo.style.display === "none") {
-          cardInfo.style.display = "block"
-        } else {
-          cardInfo.style.display = "none"
-        }
-      })
-    }
+    let card = document.getElementById("movie")
+    card.style.height !== '500px' ? card.style.height = '500px' : card.style.height = "307px"
   }
 
   render() {
     return (
       <div className="movie-index-container">
         <div className="grid-container">
-        {this.displayInfo()}
           <div className="movie" id="movie">
-            <div className="images">
-              <img src={this.props.movie.img} alt="Movie poster" style={{ width: 188, height: 285 }} />
-              <div className="more-info" id="more-info">
-                <img src={this.props.movie.background} alt="Movie backdrop"/>
-              </div>
-            </div>
+            <img src={this.props.movie.img} alt="Movie poster" style={{width: 188, height: 285}}/>
             <div className="movie-info">
-              <div className="movie-title">{this.props.movie.title}
+              <div className="movie-title" onClick={this.displayMovie}>{this.props.movie.title}
               </div>
               {this.displayDate()}
               <div className="movie-date">Release Date: {this.props.movie.get_date}
               </div>
               <p className="movie-overview">{this.props.movie.overview}</p>
+              <input type="button" onClick={this.displayInfo.bind(this)}/>
             </div>
           </div>
         </div>
