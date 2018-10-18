@@ -1,0 +1,13 @@
+.home-movies-container {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.movie-guide {
+  font-size: 56px;
+  color: #FFF;
+  font-family: 'Bitter', serif;
+  text-align: center;
+  margin: 40px 0;
+}

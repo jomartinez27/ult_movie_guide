@@ -6,13 +6,20 @@
     grid-column-gap: 40px;
 }
 
+.movie-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .movie {
     display: flex;
-    border: 1px solid #000;
+    border: 1px solid #fff;
     box-shadow: 10px 5px 15px gray;
     margin: 20px;
     padding: 10px;
     border-radius: 14px;
+    color: #FFF;
 }
 
 .movie-index {
@@ -24,31 +31,24 @@
 .movie-title {
     font-family: 'PT Sans Caption', sans-serif;
     font-size: 36px;
+    color: #01d277;
+}
+
+.movie-title div:hover {
+  color: #FFF;
 }
 
 .movie-overview {
     font-family: 'Alegreya Sans', sans-serif;
-    border: 1px solid;
     padding: 16px;
-    margin: 12px; 
+    margin: 12px;
     border-radius: 12px;
     font-size: 30px;
 }
 
-.movie-info {
-    display: flex;
-    justify-content: center;
-    flex-direction: column; 
-}
-
-.movie-link {
-    color: #000;
-}
-
-.more-info {
-    display: none;
-}
-
-.close {
-    display: none;
+.location {
+  text-align: center;
+  font-size: 56px;
+  color: #FFF;
+  font-family: 'Bitter', serif;
 }

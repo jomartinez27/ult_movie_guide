@@ -1,0 +1,101 @@
+.movie-detail-container {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.img-banner {
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+}
+
+.movie-detail-info-container {
+  display: flex;
+  align-items: flex-start;
+  padding: 40px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.movie-detail-title {
+  font-family: 'PT Sans Caption', sans-serif;
+  font-size: 56px;
+  display: flex;
+  justify-content: center;
+  color: #FFF;
+  text-shadow: 5px 5px #000;
+  padding-top: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.movie-detail-img {
+  width: 20%;
+}
+
+.movie-tagline {
+  margin-left: 20px;
+  font-size: 24px;
+  font-family: 'PT Sans Caption', sans-serif;
+  color: #FFF;
+  text-shadow: 2px 2px #000;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-gap: 20px;
+}
+
+.movie-tagline > p {
+  font-size: 20px;
+  text-shadow: 2px 2px black;
+}
+
+.more-details {
+  align-self: center;
+}
+
+.final-details {
+  color: #FFF;
+  font-size: 36px;
+  font-family: 'Alegreya Sans', sans-serif;
+  display: flex;
+  justify-content: space-around;
+}
+
+.prod-company-container {
+  background-color: #FFF;
+  display: flex;
+  align-items: center;
+}
+
+.prod-img {
+  width: 200px;
+}
+
+.prof-img {
+  width: 100px;
+}
+
+.prof-container {
+  display: flex;
+  justify-content: space-around;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 16px;
+}
+
+.actor-name {
+  color: #FFF;
+  position: relative;
+}
+
+.actor-profile-container {
+  text-align: center;
+  width: 100px;
+}
+
+h5 {
+  color: #FFF;
+  font-size: 36px;
+  display: flex;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  margin: 0;
+}
