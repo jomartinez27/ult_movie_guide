@@ -1,21 +1,30 @@
 import merge from 'lodash/merge'
 
-import { POPULAR_MOVIES, NOW_PLAYING, TOP_RATED, RECEIVE_MOVIE } from '../actions/movie_actions'
+import {
+    RECEIVE_MOVIE,
+    RECEIVE_CAST,
+    RECEIVE_RATED,
+    RECEIVE_PLAYING,
+    RECEIVE_POPULAR
+} from '../actions/movie_actions'
 
-const moviesReducer = (state = {}, action) => {
-    Object.freeze(state);
+const movieReducer = (state = {}, action) => {
+    Object.freeze(state)
+
     switch (action.type) {
-        case POPULAR_MOVIES:
-            return merge({}, state, action.popMovies)
-        case NOW_PLAYING:
-            return merge({}, state, action.nowPlaying)
-        case TOP_RATED:
-            return merge({}, state, action.topRated)
+        case RECEIVE_POPULAR:
+            return merge({}, state, action.movie)
+        case RECEIVE_PLAYING:
+            return merge({}, state, action.movie)
+        case RECEIVE_RATED:
+            return merge({}, state, action.movie)
         case RECEIVE_MOVIE:
-            return merge({}, state, { [action.movie.id]: action.movie})
+            return merge({}, state, { [action.payload.id]: action.payload })
+        case RECEIVE_CAST:
+            return merge({}, state, { [action.payload.id]: action.payload })
         default:
-        return state;
+            return state;
     }
 }
 
-export default moviesReducer;
+export default movieReducer;
