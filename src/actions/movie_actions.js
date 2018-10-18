@@ -1,48 +1,57 @@
-import * as MovieUtil from '../api/movie_util'
+import * as MovieUtil from '../util/api_util'
 
-export const POPULAR_MOVIES = 'POPULAR_MOVIES'
-export const NOW_PLAYING = 'NOW_PLAYING'
-export const TOP_RATED = 'TOP_RATED'
+export const RECEIVE_POPULAR = 'RECEIVE_POPULAR'
+export const RECEIVE_PLAYING = 'RECEIVE_PLAYING'
+export const RECEIVE_RATED = 'RECEIVE_RATED'
 export const RECEIVE_MOVIE = 'RECEIVE_MOVIE'
+export const RECEIVE_CAST = 'RECEIVE_CAST'
 
 export const fetchPopular = () => dispatch => (
     MovieUtil.fetchPopular()
-    .then(popMovies => dispatch(receivePopular(popMovies)))
+        .then(movie => dispatch(receivePopular(movie)))
 )
 
-export const receivePopular = popMovies => {
-    return ({
-        type: POPULAR_MOVIES,
-        popMovies
-    })
-}
+export const receivePopular = movie => ({
+    type: RECEIVE_POPULAR,
+    movie
+})
 
 export const fetchPlaying = () => dispatch => (
     MovieUtil.fetchPlaying()
-    .then(nowPlaying => dispatch(receivePlaying(nowPlaying)) )
+        .then(movie => dispatch(receivePlaying(movie)))
 )
 
-export const receivePlaying = nowPlaying => ({
-    type: NOW_PLAYING,
-    nowPlaying
+export const receivePlaying = movie => ({
+    type: RECEIVE_PLAYING,
+    movie
 })
 
-export const fetchRated = () => dispatch => (
-    MovieUtil.fetchRated()
-    .then(topRated => dispatch(receiveRated(topRated)))
+export const fetchTopRated = () => dispatch => (
+    MovieUtil.fetchTopRated()
+        .then(movie => dispatch(receiveRated(movie)))
 )
 
-export const receiveRated = topRated => ({
-    type: TOP_RATED,
-    topRated
+export const receiveRated = movie => ({
+    type: RECEIVE_RATED,
+    movie
 })
 
 export const fetchMovie = id => dispatch => (
     MovieUtil.fetchMovie(id)
-    .then(movie => dispatch(receiveMovie(movie)))
+        .then(movie => dispatch(receiveMovie(movie)))
 )
 
-export const receiveMovie = movie => ({
+export const receiveMovie = payload => ({
     type: RECEIVE_MOVIE,
-    movie  
+    payload
+})
+
+export const fetchCast = id => dispatch => (
+    MovieUtil.fetchCast(id)
+        .then(movie => dispatch(receiveCast(movie)))
+)
+
+export const receiveCast = payload => ({
+    type: RECEIVE_CAST,
+    payload
 })
