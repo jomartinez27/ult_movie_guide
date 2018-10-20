@@ -55,7 +55,7 @@ class MovieDetail extends React.Component {
 
     let img = `https://image.tmdb.org/t/p/original/${this.props.movie.backdrop_path}`
     let genre1 = (this.props.movie.genres[0] === undefined ? "" : this.props.movie.genres[0].name)
-    let genre2 = (this.props.movie.genres[1] === undefined ? "" : this.props.movie.genres[0].name)
+    let genre2 = (this.props.movie.genres[1] === undefined ? "" : this.props.movie.genres[1].name)
     let logoPath = (this.props.movie.production_companies[0] === undefined ? `https://image.tmdb.org/t/p/original/null` : `https://image.tmdb.org/t/p/original/${this.props.movie.production_companies[0].logo_path}`)
     let budget = (this.props.movie.budget === 0 ? '-' : this.props.movie.budget.toLocaleString())
     return (
