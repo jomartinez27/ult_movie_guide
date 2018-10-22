@@ -99,3 +99,31 @@ h5 {
   background-color: rgba(0, 0, 0, 0.5);
   margin: 0;
 }
+
+@media (max-width: 430px) {
+  .movie-detail-info-container {
+    flex-direction: column;
+  }
+  .movie-detail-img {
+    width: 200px;
+    align-self: center;
+  }
+
+  .final-details {
+    flex-direction: column;
+    align-items: center;
+    font-size: 34px;
+  }
+
+  .prod-company-container {
+    width: min-content;
+  }
+
+  .prof-container {
+    flex-wrap: wrap;
+  }
+
+  .power-by {
+    width: 200px;
+  }
+}

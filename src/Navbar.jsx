@@ -8,11 +8,12 @@ export default class Navbar extends Component {
         return (
             <div className="navbar-container">
                 <div className="navbar">
-                    <Link to="/"><img src={powerBy} alt="powered by movieDB" /></Link>
+                    <Link to="/"><img src={powerBy} alt="powered by movieDB" className="power-by"/></Link>
                 </div>
                 <div className="links-container">
                     <div className="links">
-                        <ul>
+                        <i className="material-icons">menu</i>
+                        <ul className="dropdwn">
                             <li className="link-list"><Link to="/">Home</Link></li>
                             <li className="link-list"><Link to="/popular">Popular</Link></li>
                             <li className="link-list"><Link to="/rated">Top Rated</Link></li>

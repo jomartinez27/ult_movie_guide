@@ -7,21 +7,46 @@
 }
 
 .links-container {
-    display: flex;
-    align-items: center;
+    position: relative;
+    display: inline-block;
+    height: fit-content;
 }
 
-li {
-    float: left;
+.dropdwn {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 36px;
+    background-color: #f9f9f9;
+    min-width: 126px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+}
+
+.links-container:hover .dropdwn {
+    display: block;
 }
 
 .link-list a {
     display: block;
-    color: white;
+    color: black;
     text-align: center;
     padding: 14px 16px;
 }
 
 .link-list a:hover {
     color: #01d277;
+}
+
+.links span {
+    font-size: 36px;
+}
+
+.links {
+    margin: 20px;
+}
+
+.material-icons {
+    font-size: 40px;
 }
