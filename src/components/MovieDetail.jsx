@@ -67,7 +67,7 @@ class MovieDetail extends React.Component {
           <div>
             <div className="movie-tagline">Tagline: {this.props.movie.tagline}
               <br></br>
-              Genre: {genre1}
+              Genre: {genre1},
               &nbsp;
               {genre2}
               {this.displayDate()}
