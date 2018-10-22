@@ -52,3 +52,18 @@
   color: #FFF;
   font-family: 'Bitter', serif;
 }
+
+@media (max-width: 430px) {
+    .movie {
+        flex-direction: column;
+    }
+
+    .movie img {
+        width: 200px;
+        align-self: center;
+    }
+
+    .movie-overview {
+        display: none;
+    }
+}
