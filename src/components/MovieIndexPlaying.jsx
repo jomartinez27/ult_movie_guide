@@ -47,7 +47,7 @@ class MovieIndexPlaying extends React.Component {
                     <div className="grid-container">
                         {this.displayDate()}
                         {this.props.movies.map(movie => <li key={movie.id} className="movie">
-                            <img src={"https://image.tmdb.org/t/p/w200" + movie.poster_path} alt="Movie poster" />
+                            <Link to={`movies/${movie.id}`}><img src={"https://image.tmdb.org/t/p/w200" + movie.poster_path} alt="Movie poster" /></Link>
                             <div className="movie-info">
                                 <Link to={`movies/${movie.id}`}><div className="movie-title">{movie.title}</div></Link>
                                 <div className="movie-date">Release Date: {movie.get_date}</div>
