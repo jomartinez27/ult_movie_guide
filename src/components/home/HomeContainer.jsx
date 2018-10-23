@@ -1,7 +1,7 @@
 import { connect } from 'react-redux'
 
 import Home from './Home'
-import { fetchPopular, fetchPlaying, fetchTopRated } from '../actions/movie_actions'
+import { fetchPopular, fetchPlaying, fetchTopRated } from '../../actions/movie_actions'
 
 const mapStateToProps = state => ({
     movies: state.entities.movie.results

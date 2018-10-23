@@ -3,7 +3,7 @@ import { Route, Switch } from 'react-router-dom'
 import MovieIndex from './components/MovieIndexContainer'
 import MovieRated from './components/MovieIndexRatedContainer'
 import MoviePlaying from './components/MovieIndexPlayingContainer'
-import Home from './components/HomeContainer'
+import Home from './components/home/HomeContainer'
 import MovieDetail from './components/MovieDetailContainer.jsx'
 
 class App extends Component {
@@ -23,4 +23,3 @@ class App extends Component {
 }
 
 export default App;
-
