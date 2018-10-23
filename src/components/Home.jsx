@@ -7,6 +7,7 @@ import "../CSS/Home.css"
 class Home extends React.Component {
     componentDidMount() {
         this.props.fetchPlaying()
+        .then(() => this.props.fetchPopular())
     }
 
     render() {
