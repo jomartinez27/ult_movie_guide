@@ -12,6 +12,9 @@ class MovieDetail extends React.Component {
     let div = []
     for (let i = 0; i < 8; i++) {
       let actor = this.props.movie.cast[i]
+      if (actor === undefined) {
+        return <div></div>
+      }
       let profileImage = actor.profile_path === null ? `https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png` : `https://image.tmdb.org/t/p/original/${actor.profile_path}`
       div.push(
         <div key={actor.id} className="actor-profile-container">
