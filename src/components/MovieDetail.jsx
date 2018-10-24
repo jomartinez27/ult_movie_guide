@@ -53,7 +53,14 @@ class MovieDetail extends React.Component {
 
   render() {
     if (this.props.movie === undefined || this.props.movie.cast === undefined || this.props.movie.genres === undefined) {
-      return <div>Loading</div>
+      return (
+        <div>
+          <Navbar />
+          <div className="loading-container">
+            <div className="lds-ring"><div></div><div></div><div></div><div></div></div>
+          </div>
+        </div>
+      )
     }
 
     let img = `https://image.tmdb.org/t/p/original/${this.props.movie.backdrop_path}`

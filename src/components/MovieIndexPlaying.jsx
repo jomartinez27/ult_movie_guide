@@ -37,7 +37,14 @@ class MovieIndexPlaying extends React.Component {
 
     render() {
         if (this.props.movies === undefined) {
-            return <div>Loading</div>
+            return (
+              <div>
+                <Navbar />
+                <div className="loading-container">
+                  <div className="lds-ring"><div></div><div></div><div></div><div></div></div>
+                </div>
+              </div>
+            )
         }
         return (
             <div>
