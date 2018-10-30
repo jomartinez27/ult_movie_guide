@@ -6,4 +6,4 @@ if (process.env.IS_PRODUCTION) {
   keys = require('./config')
 }
 
-module.exports = keys;
+module.exports = keys
