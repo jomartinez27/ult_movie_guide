@@ -1,3 +1,7 @@
+.home-container {
+  background-color: black;
+}
+
 .home-movies-container {
   display: flex;
   justify-content: space-evenly;
