@@ -1,5 +1,5 @@
 import $ from 'jquery'
-const { apiKey } = require('../config/production_vars')
+const apiKey  = "13974aec8a507bc409f142057852e657"
 
 export const fetchPopular = () => (
     $.ajax({
