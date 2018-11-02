@@ -1,7 +1,7 @@
 import React from 'react'
 import Navbar from '../../Navbar'
 import { Link } from 'react-router-dom'
-import { Carousel } from 'react-bootstrap'
+// import { Carousel } from 'react-bootstrap'
 import "../../CSS/Home.css"
 
 class Home extends React.Component {

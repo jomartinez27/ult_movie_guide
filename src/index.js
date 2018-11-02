@@ -9,6 +9,5 @@ import configureStore from './store/store'
 document.addEventListener("DOMContentLoaded", () => {
     const root = document.getElementById("root");
     let store = configureStore();
-    console.log(process.env)
     ReactDOM.render(<Root store={store}/>, root)
 })

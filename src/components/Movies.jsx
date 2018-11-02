@@ -4,10 +4,6 @@ import { Link } from 'react-router-dom'
 import '../CSS/Movies.css'
 
 class Movies extends React.Component {
-  constructor(props) {
-    super(props)
-  }
-
   displayDate() {
     let months = {
       "01": "Jan.",

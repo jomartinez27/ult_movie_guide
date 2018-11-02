@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import '../CSS/Movies.css'
 import Navbar from '../Navbar';
 import Movies from './Movies'
